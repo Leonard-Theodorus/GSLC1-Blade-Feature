@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RecordController;
 use Illuminate\Support\Facades\Route;
+use App\Models\records;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,24 +25,4 @@ Route::get('/about', function () {
         "title" => "About"
     ]);
 });
-Route::get('/records', function(){
-    $records = [
-        [
-            "record_title" => "Januari 2022",
-            "income" => 500000,
-            "expense" => 300000,
-            "summary" => ""
-        ],
-        [
-            "record_title" => "Februari 2022",
-            "income" => 300000,
-            "expense" => 700000,
-            "summary" => ""
-        ]
-
-    ];
-    return view('records',[
-        "title" => "Records",
-        "records" => $records
-    ]);
-});
+Route::get('/records', [RecordController::class, 'getRecord']);

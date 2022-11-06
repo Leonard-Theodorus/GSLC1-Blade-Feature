@@ -11,9 +11,23 @@
 </head>
 <body>
     @include('template.navbar')
-    <div class="container" mt-5>
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center my-5">
+                        @yield('body')
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {{-- <div class="container" mt-5>
         @yield('body')
 
+    </div> --}}
+    <div class="container">
         <div class="content1">
             @yield('content1')
         </div>
